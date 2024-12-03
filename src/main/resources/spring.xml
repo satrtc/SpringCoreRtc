@@ -24,4 +24,6 @@
             <constructor-arg value="4"/>
             <constructor-arg value="2"/>
         </bean>
+
+    <bean class="com.rtc.SpringCoreRtc.beanPostCreation"/>
 </beans>
