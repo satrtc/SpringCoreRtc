@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<bean id="triangle" class="com.rtc.SpringCoreRtc.Triangle" >
+    <property name="pointA" ref="point1"/>
+    <property name="pointB" ref="point2"/>
+    <property name="pointC" ref="point3"/>
+</bean>
+
+    <bean id="point1" class="com.rtc.SpringCoreRtc.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
+    </bean>
+
+        <bean id="point2" class="com.rtc.SpringCoreRtc.Point">
+            <property name="x" value="1"/>
+            <property name="y" value="2"/>
+        </bean>
+        <bean id="point3" class="com.rtc.SpringCoreRtc.Point">
+            <property name="x" value="3"/>
+            <property name="y" value="4"/>
+        </bean>
+</beans>
