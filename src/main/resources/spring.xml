@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-<bean id="triangle" class="com.rtc.SpringCoreRtc.Triangle" >
+<bean id="triangle" class="com.rtc.SpringCoreRtc.Triangle" init-method="init" destroy-method="destroy">
     <property name="pointA" ref="point1"/>
     <property name="pointB" ref="point2"/>
     <property name="pointC" ref="point3"/>

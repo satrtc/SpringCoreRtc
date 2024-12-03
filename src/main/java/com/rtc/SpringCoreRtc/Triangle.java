@@ -1,7 +1,14 @@
 package com.rtc.SpringCoreRtc;
 
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Triangle  {
     public Point pointA;
     public Point pointB;
     public Point pointC;
@@ -36,5 +43,24 @@ public class Triangle {
 
     public void setPointC(Point pointC) {
         this.pointC = pointC;
+    }
+
+//    @Override
+//    public void afterPropertiesSet() throws Exception {
+//        System.out.println("Bean initialised");
+//    }
+//
+//    @Override
+//    public void destroy() throws Exception {
+//        System.out.println("Bean disposed");
+//    }
+    public void init()
+    {
+        System.out.println("Bean initilised");
+    }
+
+    public void destroy()
+    {
+        System.out.println("Bean destroyed");
     }
 }
