@@ -1,13 +1,17 @@
 package com.rtc.SpringCoreRtc;
 
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
-public class Triangle  {
+public class Triangle implements ApplicationContextAware {
     public Point pointA;
     public Point pointB;
     public Point pointC;
-
+    public ApplicationContext context;
     public void draw()
     {
         System.out.println("Triangle drawn");
@@ -21,7 +25,7 @@ public class Triangle  {
     }
 
     //using autowire annotation to set the point property
-    @Autowired
+    @Autowired @Qualifier("originPoint")
     public void setPointA(Point pointA) {
         this.pointA = pointA;
     }
@@ -57,11 +61,16 @@ public class Triangle  {
     //lifecycle methods created by user
     public void init()
     {
-        System.out.println("Bean initilised");
+        System.out.println("Triangle Bean phase initialised");
     }
 
     public void destroy()
     {
-        System.out.println("Bean destroyed");
+        System.out.println("Triangle Bean initialisation phase destroyed");
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        context=applicationContext;
     }
 }

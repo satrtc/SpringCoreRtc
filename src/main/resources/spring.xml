@@ -9,12 +9,13 @@
     <context:annotation-config/>
 
     <!-- bean definitions here -->
-<bean id="triangle" class="com.rtc.SpringCoreRtc.Triangle" init-method="init" destroy-method="destroy">
+<bean id="triangle" class="com.rtc.SpringCoreRtc.Triangle" init-method="init" destroy-method="destroy" >
     <property name="pointB" ref="point2"/>
     <property name="pointC" ref="point3"/>
 </bean>
 
-    <bean id="pointA" class="com.rtc.SpringCoreRtc.Point">
+    <bean id="point1" class="com.rtc.SpringCoreRtc.Point">
+        <qualifier value="originPoint"/>
         <constructor-arg value="0"/>
         <constructor-arg value="0"/>
     </bean>
@@ -28,5 +29,8 @@
             <constructor-arg value="2"/>
         </bean>
 
+
+    <context:component-scan base-package="com.rtc.SpringCoreRtc"/>
+<!--    <bean id="circle" class="com.rtc.SpringCoreRtc.Circle" init-method="initCircle" destroy-method="destroyCircle" ></bean>-->
 <!--    <bean class="com.rtc.SpringCoreRtc.beanPostCreation"/>-->
 </beans>
