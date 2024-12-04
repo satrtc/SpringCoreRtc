@@ -1,6 +1,7 @@
 package com.rtc.SpringCoreRtc;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Triangle  {
     public Point pointA;
@@ -19,6 +20,8 @@ public class Triangle  {
         return pointA;
     }
 
+    //using autowire annotation to set the point property
+    @Autowired
     public void setPointA(Point pointA) {
         this.pointA = pointA;
     }
@@ -39,6 +42,8 @@ public class Triangle  {
         this.pointC = pointC;
     }
 
+
+    //implemented lifecycle methods
 //    @Override
 //    public void afterPropertiesSet() throws Exception {
 //        System.out.println("Bean initialised");
@@ -48,6 +53,8 @@ public class Triangle  {
 //    public void destroy() throws Exception {
 //        System.out.println("Bean disposed");
 //    }
+
+    //lifecycle methods created by user
     public void init()
     {
         System.out.println("Bean initilised");

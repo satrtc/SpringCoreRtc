@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
 
     <!-- bean definitions here -->
 <bean id="triangle" class="com.rtc.SpringCoreRtc.Triangle" init-method="init" destroy-method="destroy">
-    <property name="pointA" ref="point1"/>
     <property name="pointB" ref="point2"/>
     <property name="pointC" ref="point3"/>
 </bean>
 
-    <bean id="point1" class="com.rtc.SpringCoreRtc.Point">
+    <bean id="pointA" class="com.rtc.SpringCoreRtc.Point">
         <constructor-arg value="0"/>
         <constructor-arg value="0"/>
     </bean>
@@ -25,5 +28,5 @@
             <constructor-arg value="2"/>
         </bean>
 
-    <bean class="com.rtc.SpringCoreRtc.beanPostCreation"/>
+<!--    <bean class="com.rtc.SpringCoreRtc.beanPostCreation"/>-->
 </beans>
